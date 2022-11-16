@@ -11,10 +11,8 @@ import java.io.IOException;
 
 public class ModifyOriginalClass implements Opcodes {
     public static void main(String[] args) {
-        File root = new File("/home/zhangkaiyue/workspace/report_server/target");
+        File root = new File("");
         insert(root);
-//        File root = new File("/home/zhangkaiyue/workspace/report_server/target/classes/com/taijihuabao/reportplugin/service/impl/ClientBusinessServiceImpl.class");
-//        insert(root);
     }
 
     public static void insert(File root) {
@@ -78,7 +76,6 @@ public class ModifyOriginalClass implements Opcodes {
 
         }, ClassReader.EXPAND_FRAMES);
         byte[] bytes = cw.toByteArray();
-//        String path = "/home/zhangkaiyue/Test.class";
         System.out.println("输出路径：" + file);
         try (FileOutputStream fos = new FileOutputStream(file)) {
             fos.write(bytes);
